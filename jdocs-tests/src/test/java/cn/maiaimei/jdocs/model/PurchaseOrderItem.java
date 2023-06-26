@@ -1,4 +1,4 @@
-package cn.maiaimei.jdocs.excel;
+package cn.maiaimei.jdocs.model;
 
 import java.util.Date;
 import lombok.Data;

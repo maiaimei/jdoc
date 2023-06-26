@@ -1,8 +1,9 @@
-package cn.maiaimei.jdocs.core;
+package cn.maiaimei.jdocs;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import cn.maiaimei.jdocs.core.BeetlUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

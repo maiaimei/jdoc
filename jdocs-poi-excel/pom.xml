@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>cn.maiaimei.jdocs</groupId>
-  <artifactId>jdocs-excel</artifactId>
+  <artifactId>jdocs-poi-excel</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
@@ -14,6 +14,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <poi.version>5.2.3</poi.version>
     <poi-ooxml.version>5.2.3</poi-ooxml.version>
+    <log4j-to-slf4j.version>2.20.0</log4j-to-slf4j.version>
+    <jdocs-core.version>1.0-SNAPSHOT</jdocs-core.version>
   </properties>
 
   <dependencies>
@@ -29,16 +31,16 @@
       <artifactId>poi-ooxml</artifactId>
       <version>${poi-ooxml.version}</version>
     </dependency>
-    <dependency>
-      <groupId>cn.maiaimei.jdocs</groupId>
-      <artifactId>jdocs-core</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
     <!-- 桥接器，从log4j桥接到slf4j -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-to-slf4j</artifactId>
-      <version>2.20.0</version>
+      <version>${log4j-to-slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>cn.maiaimei.jdocs</groupId>
+      <artifactId>jdocs-core</artifactId>
+      <version>${jdocs-core.version}</version>
     </dependency>
   </dependencies>
 

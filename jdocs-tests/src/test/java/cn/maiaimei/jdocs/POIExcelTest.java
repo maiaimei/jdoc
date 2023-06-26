@@ -1,8 +1,10 @@
-package cn.maiaimei.jdocs.excel;
+package cn.maiaimei.jdocs;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import cn.maiaimei.jdocs.excel.POIExcelUtils;
+import cn.maiaimei.jdocs.model.PurchaseOrderItem;
 import com.bazaarvoice.jolt.Chainr;
 import com.bazaarvoice.jolt.JsonUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -32,7 +34,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.Test;
 
 @Slf4j
-public class POITest {
+public class POIExcelTest {
 
   private static final String ROOT_PATH = "E:\\app\\tmp\\";
   private static final String XLS = "xls";
@@ -140,12 +142,12 @@ public class POITest {
     final ObjectMapper objectMapper = new ObjectMapper();
     final List<PurchaseOrderItem> purchaseOrderItems = objectMapper.readValue(
         objectMapper.writeValueAsString(output),
-        new TypeReference<>() {
+        new TypeReference<List<PurchaseOrderItem>>() {
         });
     assertTrue(purchaseOrderItems.size() > 0);
 
     final List<PurchaseOrderItem> transform = cn.maiaimei.jdocs.core.JsonUtils.transform(
-        "/template/import-purchase-order.json", maps, new TypeReference<>() {
+        "/template/import-purchase-order.json", maps, new TypeReference<List<PurchaseOrderItem>>() {
         });
     assertTrue(transform.size() > 0);
   }
